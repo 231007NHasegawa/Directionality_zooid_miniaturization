@@ -6,7 +6,7 @@
 # Citation
 ## If you use the data or scripts from this repository in your research, please cite our paper:
 ### Naohiro Hasegawa, Shin Matsubara, Akira Shiraishi, Honoo Satake, Noa Shenkar, Hiroshi Kajihara (YEARS) TENTATIVE TITLE: From Solitary to Colonial Accompanying Miniaturization: Ancestral State Reconstruction based on Phylogenomic Analysis of Styelid Ascidians. JOURNAL. VOLUME(ISSUE): PAGES. URL.
-## Your suport in citing our work helps to ensure the continued availability and imporovement of these resources.
+### Your suport in citing our work helps to ensure the continued availability and imporovement of these resources.
 
 # Data Contents
 ## This repository includes the following data and resources:
@@ -16,7 +16,7 @@
 ### Scripts used for constructing the phylogenomic trees
 
 # Analysis Workflow
-### This section serves as a supplementary explanation for the section "Phylogenomic analysis" of Material and Methods in Hasegawa et al. (YEARS). Please refer to this paper as well. While each step can potentially be connected as a pipeline, scripts used in certain steps are believed to be applicable to phylogenetic analyses outside of this project. You can download each script from this repository. If you utilize the scripts in your project, we would appreciate it if you could cite Hasegawa et al. (YEARS).
+### This section serves as a supplementary explanation for the section "Phylogenomic analysis" of Material and Methods in Hasegawa et al. (YEARS). Please refer to this paper as well. While each step can potentially be connected as a pipeline, scripts used in certain steps are applicable to phylogenetic analyses outside of this project. You can download each script from this repository. If you utilize the scripts in your project, we would appreciate it if you could cite Hasegawa et al. (YEARS).
 
 ## STEP 1. Data Preparation
 ### Prepare fasta files containing sequences information of orthologous genes. We utilized OrthoFinder ver. 2.5.4 (Emms and Kelly 2015) for this purpose. For STEP 2, sequence IDs in the .faa files should be written as the taxon name followed by a number (e.g., >C_robusta148). Before using OrthoFinder, it's recommended to modify the sequence IDs of your transcriptome data accordingly.
