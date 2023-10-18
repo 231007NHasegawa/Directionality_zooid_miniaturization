@@ -1,7 +1,7 @@
 # Directionality_zooid_miniaturization
 
 # Overview
-### Colonial animals, such as ascidians, corals, and bryozoans, consist of individual units known as zooids. While the phenomenon of zooid miniaturization in colonial animals has been reported, the evolutionary mechanisms and patterns behind this trend have remained unexplored. An ancestral state reconstruction based on a phylogenomic analysis inferred that there has been a directional miniaturization of zooids throughout the evolutionary process of colonial ascidians in the Styelidae family. This repository contains the data and resources that supported our findings, and it serves as our academic project repository for the study of zooid miniaturization accompanying the transition from solitary to colonial life forms in ascidians.
+### Colonial animals, such as ascidians, bryozoans, and corals, consist of modules known as zooids. While zooid miniaturization in colonial animals has been reported since 1970s, the evolutionary mechanisms and patterns behind this trend have remained unexplored. Our phylogenomic analysis and ancestral state reconstruction inferred that there has been a directional miniaturization of zooids throughout the evolutionary process of colonial ascidians in the Styelidae family. This repository contains the data and resources that supported our findings, and it serves as our academic project repository for the study of zooid miniaturization accompanying the transition from solitary to colonial life forms in ascidians.
 
 # Citation
 ## If you use the data or scripts from this repository in your research, please cite our paper:
