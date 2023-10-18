@@ -1,7 +1,14 @@
 # Directionality_zooid_miniaturization
 
 # Overview
-# This repository contains data and resources for our academic project focused on inferring the evolution of zooid miniaturization in colonial animals, especially styelid ascidians. The findings from this project have been published in: Naohiro Hasegawa, Shin Matsubara, Akira Shiraishi, Honoo Satake, Noa Shenkar, Hiroshi Kajihara (####) TENTATIVE TITLE: From Solitary to Colonial Accompanying Miniaturization: Ancestral State Reconstruction based on Phylogenomic Analysis of Styelid Ascidians. JOURNAL ####. VOLUME(ISSUE): ###-###. URL.
+# Colonial animals, such as ascidians, corals, and bryozoans, consist of individual units known as zooids. While the phenomenon of zooid miniaturization in colonial animals has been reported, the evolutionary mechanisms and patterns behind this trend have remained unexplored. An ancestral state reconstruction based on a phylogenomic analysis inferred that there has been a directional miniaturization of zooids throughout the evolutionary process of colonial ascidians in the Styelidae family. This repository contains the data and resources that supported our findings, and it serves as an academic project repository for the study of zooid miniaturization accompanying the transition from solitary to colonial life forms in ascidians.
 
-# Background
-# Colonial animals, such as ascidians, corals, and bryozoans, consist of individual units known as zooids. While the phenomenon of zooid miniaturization in colonial animals has been reported, the evolutionary mechanisms and patterns behind this trend have remained unexplored. An ancestoral state reconstruction on a phylogenomic analysis inferred that directional miniaturization of zooids has been occured through the evolutionary process of colonial ascidians in Styelidae. This repository contains the data and resources that supported our findings.
+# Citation
+# If you use the data or scripts from this repository in your research, please cite our paper:
+# Naohiro Hasegawa, Shin Matsubara, Akira Shiraishi, Honoo Satake, Noa Shenkar, Hiroshi Kajihara (####) TENTATIVE TITLE: From Solitary to Colonial Accompanying Miniaturization: Ancestral State Reconstruction based on Phylogenomic Analysis of Styelid Ascidians. JOURNAL ####. VOLUME(ISSUE): ###-###. URL.
+# Your suport in citing our work helps to ensure the continued availability and imporovement of these resources.
+
+# Data
+# The data in this repository includes:
+# Transcriptomic datasets assembled in this project.
+# A partition file used for maximum likelihood analysis and Bayesian inference analysis.
