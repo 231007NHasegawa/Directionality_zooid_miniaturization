@@ -19,19 +19,19 @@
 ### This section serves as a supplementary explanation for the section "Phylogenomic analysis" of Material and Methods in Hasegawa et al. (YEARS). Please refer to this paper as well. While each step can potentially be connected as a pipeline, scripts used in certain steps are applicable to phylogenetic analyses outside of this project. You can download each script from this repository. If you utilize the scripts in your project, we would appreciate it if you could cite Hasegawa et al. (YEARS).
 
 ## STEP 1. Data Preparation
-### Prepare fasta files containing sequences information of orthologous genes. We utilized OrthoFinder ver. 2.5.4 (Emms and Kelly 2015) for this purpose. For STEP 2, sequence IDs in the .faa files should be written as the taxon name followed by a number (e.g., >C_robusta148). Before using OrthoFinder, it's recommended to modify the sequence IDs of your transcriptome data accordingly.
+### Prepare fasta files containing sequences of orthologous genes. We utilized OrthoFinder ver. 2.5.4 (Emms and Kelly 2015) for this purpose. For STEP 2, sequence IDs in the .faa files should be written as the taxon name followed by a number (e.g., >C_robusta148). Before using OrthoFinder, it's recommended to modify the sequence IDs of your transcriptome data accordingly.
 
 ## STEP 2. Clustering
-### Ensure that each .faa file contains the longest gene sequence derived from the same species. Also, each .faa file should contain species listed in both list1.txt and list2.txt, with a certain minimum number from each list. This operation was performed using Clustering.py. Note that Clustering.py might produce an error if there are unnecessary line breaks in the .faa file. To remove these line breaks, use remove_line_breaks.py.
+### Ensure that each fasta file contains the longest gene sequence derived from each sample. Also, each file should contain taxa listed in both list1.txt and list2.txt, with a certain minimum number from each list. This operation was performed using a Python script, Clustering.py. Note that Clustering.py might produce an error if there are unnecessary line breaks in the .faa file. To remove these line breaks, use remove_line_breaks.py.
 
 ## STEP 3. Multiple Alignment
-### We created a simple script, RunMafft.sh, to automatically align each gene sequence cluster's .faa file sequentially using Mafft (Katoh and Standley 2013).
+### We created a simple script, RunMafft.sh, to automatically align each gene sequence cluster's fasta file sequentially using Mafft (Katoh and Standley 2013).
 
 ## STEP 4. Trimming
-### After processing with Mafft, we created another simple script, RuntrimAL.sh, to automatically trim the .faa files sequentially using TrimAl (Capella-Gutierrez et al. 2009).
+### After processing with Mafft, we created another simple script, RuntrimAL.sh, to automatically trim the fasta files sequentially using trimAl (Capella-Gutierrez et al. 2009).
 
 ## STEP 5. Concatenating
-### After trimming, the .faa files were concatenated into a single file. The script used for this purpose is Concatenate.py.
+### After trimming, the fasta files were concatenated into a single file by using the Python script Concatenate.py.
 
 # References
 ### OrthoFinder: Emms, D.M. and Kelly, S. (2015) OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy. Genome Biology. 16:157.
