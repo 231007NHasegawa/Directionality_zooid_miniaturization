@@ -10,7 +10,7 @@
 
 # Data Contents
 ## This repository includes the following data and resources:
-### Fasta files (.faa) of transcriptomes after quolity check in this project
+### Fasta files (.faa) of transcriptomes after quality check in this project
 ### A partition file used for both maximum likelihood analysis and Bayesian inference analysis
 ### Tree files in Newick format
 ### Scripts used for constructing the phylogenomic trees
