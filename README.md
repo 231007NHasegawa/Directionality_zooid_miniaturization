@@ -1,4 +1,4 @@
-# Directionality of Zooid Miniaturization in Colonial Ascidians
+# Spatial competition drives directional zooid miniaturization in colonial stolidobranch ascidians
 
 ## Overview
 Colonial animals, such as ascidians, bryozoans, and corals, consist of modules known as zooids.  
@@ -6,8 +6,8 @@ While zooid miniaturization in colonial animals has been noted since the 1970s, 
 Our phylogenomic analysis and ancestral-state reconstruction revealed a directional reduction in zooid size associated with the evolution of coloniality in Styelidae ascidians.  
 This repository provides all data and resources supporting the analyses reported in:
 
-> Hasegawa N., Matsubara S., Shiraishi A., Satake H., Shenkar N., Kajihara H. (2025).  
-> *Directional evolution of zooid size associated with the emergence of coloniality in Stolidobranch ascidians.*  
+> Hasegawa N., Matsubara S., Shiraishi A., Satake H., Kajihara H. (2025).  
+> *Spatial competition drives directional zooid miniaturization in colonial stolidobranch ascidians.*  
 > **Molecular Biology and Evolution** (in review).
 
 ---
@@ -21,7 +21,7 @@ All files are located in the root directory of this repository.
 | `partition.txt` | Partition scheme used for both ML and BI analyses |
 | `ML_tree.newick` | Maximum-likelihood phylogenetic tree (IQ-TREE) |
 | `BI_tree.newick` | Bayesian phylogenetic tree (ExaBayes) |
-| `*.py`, `*.sh` | Python and Bash scripts used for phylogenomic and trait analyses |
+| `*.py`, `*.sh` | Python and Bash scripts used for phylogenomic analyses |
 | `Supplementary_Figures.pdf` | Supplementary figures accompanying the paper |
 | `Supplementary_Tables.xlsx` | Supplementary tables accompanying the paper |
 
@@ -55,7 +55,7 @@ All scripts are reusable for other phylogenomic analyses.
 
 ## Citation
 If you use any data or scripts from this repository, please cite:  
-> Hasegawa N. et al. (2025). *Directional evolution of zooid size associated with the emergence of coloniality in Stolidobranch ascidians.*  
+> Hasegawa N. et al. (2025). *Spatial competition drives directional zooid miniaturization in colonial stolidobranch ascidians.*  
 > **Molecular Biology and Evolution** (in review).
 
 ---
