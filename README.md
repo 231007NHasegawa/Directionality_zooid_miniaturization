@@ -27,22 +27,12 @@ All files are located in the root directory of this repository.
 
 ---
 
-## Analysis Workflow
-This repository complements the *Materials and Methods* section of Hasegawa et al. (2025).  
-All scripts are reusable for other phylogenomic analyses.
-
-1. **Data preparation**  
-   Orthologous gene sequences were prepared using *OrthoFinder* (Emms & Kelly, 2015).  
-   Sequence IDs follow the format `>TaxonName###`.
-
-2. **Multiple alignment and trimming**  
-   Each gene cluster was aligned using *MAFFT* (Katoh & Standley, 2013) and trimmed using *trimAl* (Capella-Gutierrez et al., 2009).
-
-3. **Concatenation and tree inference**  
-   The trimmed alignments were concatenated, and phylogenomic analyses were performed using *IQ-TREE* and *ExaBayes*.
-
-4. **Ancestral-state reconstruction**  
-   Trait evolution analyses were conducted using *BayesTraits* v4.0.1.
+## Analysis Workflow by using the scripts
+###STEP 1. Data Preparation Prepare fasta files containing sequences of orthologous genes. We utilized OrthoFinder ver. 2.5.4 (Emms and Kelly 2015) for this purpose. For STEP 2, sequence IDs in the .faa files should be written as the taxon name followed by a number (e.g., >C_robusta148). Before using OrthoFinder, it's recommended to modify the sequence IDs of your transcriptome data accordingly.
+###STEP 2. Clustering Ensure that each fasta file contains the longest gene sequence derived from each sample. Also, each file should contain taxa listed in both list1.txt and list2.txt, with a certain minimum number from each list. This operation was performed using a Python script, Clustering.py. Note that Clustering.py might produce an error if there are unnecessary line breaks in the .faa file. To remove these line breaks, use remove_line_breaks.py.
+###STEP 3. Multiple Alignment We created a simple script, RunMafft.sh, to automatically align each gene sequence cluster's fasta file sequentially using Mafft (Katoh and Standley 2013).
+###STEP 4. Trimming After processing with Mafft, we created another simple script, RuntrimAL.sh, to automatically trim the fasta files sequentially using trimAl (Capella-Gutierrez et al. 2009).
+###STEP 5. Concatenating After trimming, the fasta files were concatenated into a single file by using the Python script Concatenate.py.
 
 ---
 
