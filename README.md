@@ -22,7 +22,7 @@ All files are located in the root directory of this repository.
 | `ML_tree.newick` | Maximum-likelihood phylogenetic tree (IQ-TREE) |
 | `BI_tree.newick` | Bayesian phylogenetic tree (ExaBayes) |
 | `*.py`, `*.sh` | Python and Bash scripts used for phylogenomic analyses |
-| `Supplementary_Figures.pdf` | Supplementary figures accompanying the paper |
+| `Supplementary_Figures.docx` | Supplementary figures accompanying the paper |
 | `Supplementary_Tables.xlsx` | Supplementary tables accompanying the paper |
 
 ---
