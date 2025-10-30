@@ -27,19 +27,53 @@ All files are located in the root directory of this repository.
 
 ---
 
-## Analysis Workflow by using the scripts
-- STEP 1. Data Preparation Prepare fasta files containing sequences of orthologous genes. We utilized OrthoFinder ver. 2.5.4 (Emms and Kelly 2015) for this purpose. For STEP 2, sequence IDs in the .faa files should be written as the taxon name followed by a number (e.g., >C_robusta148). Before using OrthoFinder, it's recommended to modify the sequence IDs of your transcriptome data accordingly.
-- STEP 2. Clustering Ensure that each fasta file contains the longest gene sequence derived from each sample. Also, each file should contain taxa listed in both list1.txt and list2.txt, with a certain minimum number from each list. This operation was performed using a Python script, Clustering.py. Note that Clustering.py might produce an error if there are unnecessary line breaks in the .faa file. To remove these line breaks, use remove_line_breaks.py.
-- STEP 3. Multiple Alignment We created a simple script, RunMafft.sh, to automatically align each gene sequence cluster's fasta file sequentially using Mafft (Katoh and Standley 2013).
-- STEP 4. Trimming After processing with Mafft, we created another simple script, RuntrimAL.sh, to automatically trim the fasta files sequentially using trimAl (Capella-Gutierrez et al. 2009).
-- STEP 5. Concatenating After trimming, the fasta files were concatenated into a single file by using the Python script Concatenate.py.
+## Analysis Workflow Using the Scripts
+
+The following steps describe how each script in this repository can be used to reproduce the phylogenomic analysis conducted in Hasegawa et al. (2025).  
+All scripts can be executed in a Linux (WSL) environment and are compatible with standard bioinformatics toolkits.
 
 ---
 
-## References
-- Emms & Kelly (2015) *Genome Biology* 16:157. (**OrthoFinder**)  
-- Katoh & Standley (2013) *Mol. Biol. Evol.* 30(4):772–780. (**MAFFT**)  
-- Capella-Gutierrez et al. (2009) *Bioinformatics* 25:1972–1973. (**trimAl**)  
+### STEP 1. Data Preparation
+Prepare FASTA files containing orthologous gene sequences.  
+We utilized **OrthoFinder** ver. 2.5.4 (Emms & Kelly, 2015) for this purpose.  
+For the next step, sequence IDs in the `.faa` files should be formatted as the taxon name followed by a unique number (e.g., >C_robusta148). Before running OrthoFinder, it is recommended to standardize the sequence IDs of your transcriptome data accordingly.
+
+---
+
+### STEP 2. Clustering
+Ensure that each FASTA file contains the longest gene sequence derived from each sample.  
+Each file should also include taxa listed in both `list1.txt` and `list2.txt`, with a minimum number of taxa from each list.  
+This step was performed using the Python script **`Clustering.py`**.
+
+> 💡 **Note:**  
+> `Clustering.py` may return an error if the input FASTA file contains unnecessary line breaks.  
+> To remove such line breaks, use the auxiliary script **`remove_line_breaks.py`** prior to clustering.
+
+---
+
+### STEP 3. Multiple Alignment
+Run the shell script **`RunMafft.sh`** to automatically align each clustered FASTA file sequentially using **MAFFT** (Katoh & Standley, 2013).  
+The script is designed to process all files within a specified directory and output aligned sequences with the suffix `_aligned.faa`.
+
+---
+
+### STEP 4. Trimming
+After alignment, execute **`RuntrimAL.sh`** to trim the aligned FASTA files automatically using **trimAl** (Capella-Gutierrez et al., 2009).  
+The script removes poorly aligned regions and generates output files with the suffix `_trimmed.faa`.
+
+---
+
+### STEP 5. Concatenation
+Once all trimmed alignments are complete, concatenate them into a single supermatrix using the Python script **`Concatenate.py`**.  
+This script merges all `.faa` files in the directory into a single alignment file (`alignment.fa`), suitable for downstream phylogenetic analyses.
+
+---
+
+### References for Software
+- Emms & Kelly (2015) *Genome Biology* 16:157 — OrthoFinder  
+- Katoh & Standley (2013) *Mol. Biol. Evol.* 30(4):772–780 — MAFFT  
+- Capella-Gutierrez et al. (2009) *Bioinformatics* 25:1972–1973 — trimAl
 
 ---
 
