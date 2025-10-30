@@ -46,7 +46,7 @@ Ensure that each FASTA file contains the longest gene sequence derived from each
 Each file should also include taxa listed in both `list1.txt` and `list2.txt`, with a minimum number of taxa from each list.  
 This step was performed using the Python script **`Clustering.py`**.
 
-> 💡 **Note:**  
+> Note:
 > `Clustering.py` may return an error if the input FASTA file contains unnecessary line breaks.  
 > To remove such line breaks, use the auxiliary script **`remove_line_breaks.py`** prior to clustering.
 
