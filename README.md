@@ -1,54 +1,70 @@
-# Directionality_zooid_miniaturization
+# Spatial competition drives directional zooid miniaturization in colonial stolidobranch ascidians
 
-# Overview
-### Colonial animals, such as ascidians, bryozoans, and corals, consist of modules known as zooids. While zooid miniaturization in colonial animals has been reported since 1970s, the evolutionary mechanisms and patterns behind this trend have remained unexplored. Our phylogenomic analysis and ancestral state reconstruction inferred that there has been a directional miniaturization of zooids throughout the evolutionary process of colonial ascidians in the Styelidae family. This repository contains the data and resources that supported our findings, and it serves as our academic project repository for the study of zooid miniaturization accompanying the transition from solitary to colonial life forms in ascidians.
+## Overview
+Colonial animals, such as ascidians, bryozoans, and corals, consist of modules known as zooids. While zooid miniaturization in colonial animals has been reported since the 1970s, the evolutionary mechanisms and patterns underlying this trend have remained unexplored.  
+Our phylogenomic analysis and ancestral-state reconstruction revealed directional reduction in zooid size associated with the evolution of coloniality in Styelidae ascidians.  
+This repository contains all datasets, scripts, and supplementary materials supporting the analyses reported in:
 
-# Citation
-## If you use the data or scripts from this repository in your research, please cite our paper:
-### Naohiro Hasegawa, Shin Matsubara, Akira Shiraishi, Honoo Satake, Noa Shenkar, Hiroshi Kajihara (YEARS) TENTATIVE TITLE: From Solitary to Colonial Accompanying Miniaturization: Ancestral State Reconstruction based on Phylogenomic Analysis of Styelid Ascidians. JOURNAL. VOLUME(ISSUE): PAGES. URL.
-### Your suport in citing our work helps to ensure the continued availability and imporovement of these resources.
+> Hasegawa N., Matsubara S., Shiraishi A., Satake H., Kajihara H. (2025).  
+> *Spatial competition drives directional zooid miniaturization in colonial stolidobranch ascidians.*  
+> **Molecular Biology and Evolution** (in review).
 
-# Data Contents
-## This repository includes the following data and resources:
-### Fasta files (.faa) of transcriptomes after quality check in this project
-### A partition file used for both maximum likelihood analysis and Bayesian inference analysis
-### Tree files in Newick format
-### Scripts used for constructing the phylogenomic trees
+---
 
-# Analysis Workflow
-### This section serves as a supplementary explanation for the section "Phylogenomic analysis" of Material and Methods in Hasegawa et al. (YEARS). Please refer to this paper as well. While each step can potentially be connected as a pipeline, scripts used in certain steps are applicable to phylogenetic analyses outside of this project. You can download each script from this repository. If you utilize the scripts in your project, we would appreciate it if you could cite Hasegawa et al. (YEARS).
+## Repository Contents
+- `alignment.fa`: Final concatenated alignment used for phylogenomic inference  
+- `partition.txt`: Partition scheme used for both ML and BI analyses  
+- `ML_tree.newick`: Maximum-likelihood tree inferred using IQ-TREE  
+- `BI_tree.newick`: Bayesian tree inferred using ExaBayes  
+- `scripts/`: Python and Bash scripts used for phylogenomic and trait analyses  
+- `Supplementary_Figures/` and `Supplementary_Tables/`: Supplementary materials accompanying the paper  
+- `command_log.txt`: Representative command lines for PartitionFinder2, ExaBayes, and BayesTraits analyses  
 
-## STEP 1. Data Preparation
-### Prepare fasta files containing sequences of orthologous genes. We utilized OrthoFinder ver. 2.5.4 (Emms and Kelly 2015) for this purpose. For STEP 2, sequence IDs in the .faa files should be written as the taxon name followed by a number (e.g., >C_robusta148). Before using OrthoFinder, it's recommended to modify the sequence IDs of your transcriptome data accordingly.
+---
 
-## STEP 2. Clustering
-### Ensure that each fasta file contains the longest gene sequence derived from each sample. Also, each file should contain taxa listed in both list1.txt and list2.txt, with a certain minimum number from each list. This operation was performed using a Python script, Clustering.py. Note that Clustering.py might produce an error if there are unnecessary line breaks in the .faa file. To remove these line breaks, use remove_line_breaks.py.
+## Analysis Workflow
+This repository complements the *Materials and Methods* section of Hasegawa et al. (2025).  
+All scripts are reusable for other phylogenomic analyses.
 
-## STEP 3. Multiple Alignment
-### We created a simple script, RunMafft.sh, to automatically align each gene sequence cluster's fasta file sequentially using Mafft (Katoh and Standley 2013).
+### STEP 1. Data Preparation
+Prepare FASTA files containing orthologous gene sequences using **OrthoFinder** (Emms & Kelly, 2015).  
+Sequence IDs should follow the format `>TaxonName###`.
 
-## STEP 4. Trimming
-### After processing with Mafft, we created another simple script, RuntrimAL.sh, to automatically trim the fasta files sequentially using trimAl (Capella-Gutierrez et al. 2009).
+### STEP 2. Clustering
+Extract the longest sequence per gene per taxon using `Clustering.py`.  
+Use `remove_line_breaks.py` to clean malformed FASTA files if necessary.
 
-## STEP 5. Concatenating
-### After trimming, the fasta files were concatenated into a single file by using the Python script Concatenate.py.
+### STEP 3. Multiple Alignment
+Align each gene cluster using **MAFFT** (Katoh & Standley, 2013) via `RunMafft.sh`.
 
-# References
-### OrthoFinder: Emms, D.M. and Kelly, S. (2015) OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy. Genome Biology. 16: 157.
-### MAFFT: Katoh K, Standley DM (2013) MAFFT multiple sequence alignment software version 7: improvements in performance and usability. Molecular Biology and Evolution 30(4): 772–780.
-### trimAl: Capella-Gutierrez S, Silla-Martinez JM, Gabaldon T (2009) trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses. Bioinformatics. 25: 1972–1973.
+### STEP 4. Trimming
+Trim aligned FASTA files using **trimAl** (Capella-Gutierrez et al., 2009) with `RunTrimAl.sh`.
 
-# Acknowledgments
-## We extend our gratitude to following persons:
-## For collecting biosamples:
-### Cati, Masashi Fukuoka, Bar Gabso, Shoichi Hamano, Natsumi Hookabe, Hiroki Iranami, Naoto Jimi, Yosuke Kamata, Hidenori Katsuragawa, Manami Kimura, Yuki Kita, Hisanori Kohtsuka, Hiroshi Kuriyama, Shlomi Levi, Hiroki Matsushita, Ayumi Mizutani, Lion Novak, Takashi Okada, Misato Sako, Nahum Sela, Maki Shirae-Kurabayashi, Shoki Shiraki, Takeo Sugimoto, Aoi Tsuyuki, Naofumi Ueda, Junko Watanabe, and Hiroshi Yonamine
-## For lab works:
-### Gil Koplovitz and Gal Vered
-## For technical support in script development:
-### Kei Kitahata
-## For academic support in RNA-seq analysis:
-### Analytical Center of Suntory Foundation for Life Sciences Bioorganic Research Institute
-## For croudfunding support in the academic croudfunding platform "academist":
-### Shunji Furukuma, Naoki Hayashi, Miyuki Honda, Hitoki Horie, Sho Hosotani, Yoshiki Iwai, Nami Kenmotsu, Moe, Takehiro Nakamura, Ryoma Nishikawa, Yuichi Sasaki, Tatsuya Shimoyama, Makoto Taniguchi, Daiki Wakita, Takaaki Yonekura, and many others
-## For financial support:
-### JST SPRING (Grant Number JPMASP2119)
+### STEP 5. Concatenation
+Concatenate trimmed alignments into a single supermatrix using `Concatenate.py`.
+
+---
+
+## References
+- Emms & Kelly (2015) *Genome Biology* 16:157. (**OrthoFinder**)  
+- Katoh & Standley (2013) *Mol. Biol. Evol.* 30(4):772–780. (**MAFFT**)  
+- Capella-Gutierrez et al. (2009) *Bioinformatics* 25:1972–1973. (**trimAl**)
+
+---
+
+## Acknowledgments
+We gratefully acknowledge all contributors for sample collection, laboratory assistance, script development, and crowdfunding support.  
+A detailed list of acknowledgments is available in the published article.
+
+---
+
+## Citation
+If you use any part of this repository, please cite:  
+> Hasegawa N. et al. (2025). *Spatial competition drives directional zooid miniaturization in colonial stolidobranch ascidians.*  
+> **Molecular Biology and Evolution** (in review).
+
+---
+
+## License
+This repository is released under the CC-BY 4.0 license, allowing reuse with attribution.
+
