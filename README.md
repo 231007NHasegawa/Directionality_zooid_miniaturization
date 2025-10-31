@@ -2,8 +2,8 @@
 
 ## Overview
 Colonial animals, such as ascidians, bryozoans, and corals, consist of modules known as zooids.  
-While zooid miniaturization in colonial animals has been noted since the 1970s, the evolutionary mechanisms and patterns underlying this trend have remained unexplored.  
-Our phylogenomic analysis and ancestral-state reconstruction revealed a directional reduction in zooid size associated with the evolution of coloniality in Styelidae ascidians.  
+While small zooid size in colonial animals has been noted since the 1970s, the evolutionary mechanisms and patterns underlying this tendency have remained unexplored.  
+Our phylogenomic analysis and ancestral-state reconstruction revealed a directional reduction in zooid size associated with the evolution of coloniality in the ascidian order Stolidobranchia.
 This repository provides all data and resources supporting the analyses reported in:
 
 > Hasegawa N., Matsubara S., Shiraishi A., Satake H., Kajihara H. (2025).  
